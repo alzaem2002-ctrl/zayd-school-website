@@ -9,5 +9,9 @@
     "test": "playwright test"
   },
   "author": "????????? ???????",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "serve": "^14.2.5"
+  }
 }
