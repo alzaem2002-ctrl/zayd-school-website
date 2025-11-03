@@ -947,7 +947,8 @@ function handleUpload(event) {
   const file = fileInput.files[0];
   
   if (!file || !teacherName) {
-    alert('يرجى إدخال اسم المعلم واختيار الملف');
+    // استخدام Unicode escape sequences للتأكد من عرض العربية بشكل صحيح
+    alert('\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0633\u0645 \u0627\u0644\u0645\u0639\u0644\u0645 \u0648\u0627\u062e\u062a\u064a\u0627\u0631 \u0627\u0644\u0645\u0644\u0641');
     return;
   }
   
@@ -956,7 +957,8 @@ function handleUpload(event) {
   const teacherKey = teacherName.toLowerCase();
   
   if (existingData[teacherKey] && existingData[teacherKey][elementId]) {
-    if (!confirm(`يوجد ملف مرفوع بالفعل للمعلم "${teacherName}" في هذا العنصر. هل تريد استبداله؟`)) {
+    const confirmMsg = '\u064a\u0648\u062c\u062f \u0645\u0644\u0641 \u0645\u0631\u0641\u0648\u0639 \u0628\u0627\u0644\u0641\u0639\u0644 \u0644\u0644\u0645\u0639\u0644\u0645 "' + teacherName + '" \u0641\u064a \u0647\u0630\u0627 \u0627\u0644\u0639\u0646\u0635\u0631. \u0647\u0644 \u062a\u0631\u064a\u062f \u0627\u0633\u062a\u0628\u062f\u0627\u0644\u0647\u061f';
+    if (!confirm(confirmMsg)) {
       return;
     }
   }
@@ -988,7 +990,9 @@ function handleUpload(event) {
     // تحديث الواجهة
     updateUploadStatus(elementId, true);
     closeUploadModal();
-    alert(`✅ تم رفع ملف المعلم "${teacherName}" بنجاح!`);
+    // استخدام Unicode escape sequences للتأكد من عرض العربية بشكل صحيح
+    const successMsg = '\u2713 \u062a\u0645 \u0631\u0641\u0639 \u0645\u0644\u0641 \u0627\u0644\u0645\u0639\u0644\u0645 "' + teacherName + '" \u0628\u0646\u062c\u0627\u062d!';
+    alert(successMsg);
     
     // لا حاجة لإعادة تحميل قائمة الملفات تلقائياً
   };
@@ -1031,7 +1035,9 @@ function updateUploadStatus(elementId, uploaded) {
 function openTeacherUpload(teacherId, teacherName, elementId) {
   if (!teacherId || !teacherName) {
     // إذا لم يتم تحديد المعلم، اطلب من المستخدم إدخال اسم المعلم
-    const inputName = prompt('يرجى إدخال اسم المعلم:');
+    // استخدام Unicode escape sequences للتأكد من عرض العربية بشكل صحيح
+    const promptMsg = '\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0633\u0645 \u0627\u0644\u0645\u0639\u0644\u0645:';
+    const inputName = prompt(promptMsg);
     if (!inputName) return;
     teacherName = inputName;
     teacherId = inputName.toLowerCase().replace(/\s+/g, '-');
@@ -1043,7 +1049,9 @@ function openTeacherUpload(teacherId, teacherName, elementId) {
 
 // فتح نافذة لإدخال اسم المعلم ثم فتح صفحة الرفع
 function openTeacherUploadPrompt(elementId, elementName) {
-  const teacherName = prompt(`يرجى إدخال اسم المعلم لرفع تقرير الأداء في:\n"${elementName}"\n\nاسم المعلم:`);
+  // استخدام Unicode escape sequences للتأكد من عرض العربية بشكل صحيح
+  const promptMsg = '\u064a\u0631\u062c\u0649 \u0625\u062f\u062e\u0627\u0644 \u0627\u0633\u0645 \u0627\u0644\u0645\u0639\u0644\u0645 \u0644\u0631\u0641\u0639 \u062a\u0642\u0631\u064a\u0631 \u0627\u0644\u0623\u062f\u0627\u0621 \u0641\u064a:\n"' + elementName + '"\n\n\u0627\u0633\u0645 \u0627\u0644\u0645\u0639\u0644\u0645:';
+  const teacherName = prompt(promptMsg);
   if (!teacherName || teacherName.trim() === '') {
     return;
   }
@@ -1222,7 +1230,8 @@ function downloadFile(teacherKey, elementId) {
   const file = filesData[teacherKey] && filesData[teacherKey][elementId];
   
   if (!file) {
-    alert('الملف غير موجود');
+    // استخدام Unicode escape sequences للتأكد من عرض العربية بشكل صحيح
+    alert('\u0627\u0644\u0645\u0644\u0641 \u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f');
     return;
   }
   
@@ -1236,7 +1245,9 @@ function downloadFile(teacherKey, elementId) {
 
 // حذف الملف
 function deleteFile(teacherKey, elementId) {
-  if (!confirm('هل أنت متأكد من حذف هذا الملف؟')) {
+  // استخدام Unicode escape sequences للتأكد من عرض العربية بشكل صحيح
+  const deleteConfirm = '\u0647\u0644 \u0623\u0646\u062a \u0645\u062a\u0623\u0643\u062f \u0645\u0646 \u062d\u0630\u0641 \u0647\u0630\u0627 \u0627\u0644\u0645\u0644\u0641\u061f';
+  if (!confirm(deleteConfirm)) {
     return;
   }
   
@@ -1256,7 +1267,8 @@ function deleteFile(teacherKey, elementId) {
     const elementName = ELEMENT_NAMES[elementId];
     viewElementFiles(elementId, elementName);
     
-    alert('✓ تم حذف الملف بنجاح');
+    // استخدام Unicode escape sequences للتأكد من عرض العربية بشكل صحيح
+    alert('\u2713 \u062a\u0645 \u062d\u0630\u0641 \u0627\u0644\u0645\u0644\u0641 \u0628\u0646\u062c\u0627\u062d');
   }
 }
 
