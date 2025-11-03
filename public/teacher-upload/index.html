@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>??? ?????? ??????</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Noto Naskh Arabic UI", Tahoma, Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      direction: rtl;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .card {
+      max-width: 480px;
+      margin: 40px auto;
+      padding: 32px;
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 8px;
+      color: #2d3748;
+      font-size: 1.8em;
+    }
+    .subtitle {
+      text-align: center;
+      color: #718096;
+      margin-bottom: 24px;
+      font-size: 0.95em;
+    }
+    label {
+      display: block;
+      margin-top: 16px;
+      color: #2d3748;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    input[type="text"],
+    input[type="file"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      margin-top: 6px;
+      font-family: inherit;
+      font-size: 1em;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    input[type="file"] {
+      padding: 8px;
+      cursor: pointer;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .btn {
+      width: 100%;
+      margin-top: 24px;
+      padding: 14px 24px;
+      border: none;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+    }
+    .btn:active {
+      transform: translateY(0);
+    }
+    .info-box {
+      background: #f7fafc;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border-right: 4px solid #667eea;
+      font-size: 0.9em;
+      color: #4a5568;
+    }
+    .teacher-id-display {
+      background: #edf2f7;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-family: monospace;
+      color: #667eea;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .success-message {
+      display: none;
+      background: #d1fae5;
+      color: #065f46;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    .success-message.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>?? ??? ????? ??????</h2>
+    <p class="subtitle">???? ????? ?????? ????? ???? ??????</p>
+    
+    <div class="info-box" id="teacherInfo">
+      <strong>???? ??????:</strong>
+      <div class="teacher-id-display" id="teacherIdDisplay">???? ???????...</div>
+    </div>
+    
+    <form id="uploadForm">
+      <label for="teacherName">??? ?????? *</label>
+      <input type="text" id="teacherName" name="teacherName" required placeholder="?????: ????????? ???????">
+      
+      <label for="term">????? ??????? *</label>
+      <select id="term" name="term" required>
+        <option value="">????...</option>
+        <option value="????? ?????">????? ?????</option>
+        <option value="????? ??????">????? ??????</option>
+      </select>
+      
+      <label for="reportFile">??? ??????? * (PDF, DOC, DOCX)</label>
+      <input type="file" id="reportFile" name="reportFile" accept=".pdf,.doc,.docx" required>
+      
+      <label for="notes">??????? ??????</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="?? ??????? ?? ??????? ??????..."></textarea>
+      
+      <button type="submit" class="btn">?? ??? ???????</button>
+    </form>
+    
+    <div class="success-message" id="successMessage">
+      ? ?? ??? ??????? ?????!
+    </div>
+  </div>
+  
+  <script>
+    // ??????? ???? ?????? ?? URL
+    function getTeacherIdFromURL() {
+      const params = new URLSearchParams(window.location.search);
+      const teacherId = params.get('id') || params.get('teacherId') || 
+                       window.location.hash.substring(1) || 
+                       '??? ????';
+      return teacherId;
+    }
+    
+    // ??? ???? ??????
+    const teacherId = getTeacherIdFromURL();
+    document.getElementById('teacherIdDisplay').textContent = teacherId;
+    
+    // ????? ??? ?????? ???????? ??? ??? ????? ???????
+    if (teacherId && teacherId !== '??? ????') {
+      // ???? ????? ???? ???????? ??? ?????? ?? ?????
+      document.getElementById('teacherName').placeholder = `??????: ${teacherId}`;
+    }
+    
+    // ?????? ??? ???????
+    document.getElementById('uploadForm').onsubmit = function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const teacherName = formData.get('teacherName');
+      const term = formData.get('term');
+      const file = formData.get('reportFile');
+      const notes = formData.get('notes');
+      
+      // ?????? ?? ????????
+      if (!teacherName || !term || !file) {
+        alert('???? ????? ???? ?????? ????????');
+        return;
+      }
+      
+      // ?????? ??? ????? (?? ??????? ???? ?????? ??????)
+      console.log('?????? ???????:', {
+        teacherId: teacherId,
+        teacherName: teacherName,
+        term: term,
+        fileName: file.name,
+        fileSize: file.size,
+        notes: notes,
+        uploadDate: new Date().toISOString()
+      });
+      
+      // ??? ?? localStorage ????????
+      try {
+        const reports = JSON.parse(localStorage.getItem('teacherReports') || '[]');
+        reports.push({
+          teacherId: teacherId,
+          teacherName: teacherName,
+          term: term,
+          fileName: file.name,
+          fileSize: file.size,
+          notes: notes,
+          uploadDate: new Date().toISOString(),
+          fileContent: null // ?? ??????? ???? ??? ????? ??? ??????
+        });
+        localStorage.setItem('teacherReports', JSON.stringify(reports));
+      } catch (error) {
+        console.error('??? ?? ??? ????????:', error);
+      }
+      
+      // ????? ????? ??????
+      document.getElementById('successMessage').classList.add('show');
+      document.getElementById('uploadForm').reset();
+      
+      // ????? ??????? ??? 2 ?????
+      setTimeout(function() {
+        if (window.opener) {
+          window.close();
+        } else {
+          alert('? ?? ??? ??????? ?????!\n???? ????? ??????...');
+          window.close();
+        }
+      }, 2000);
+    };
+  </script>
+</body>
+</html>
