@@ -478,6 +478,9 @@ h2 {
   color: #667eea;
   margin-bottom: 20px;
 }
+.teacher-files-section {
+  scroll-margin-top: 20px;
+}
 .file-list {
   list-style: none;
   padding: 0;
@@ -770,7 +773,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-1">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(1, 'الأداء الوظيفي والإنجازات')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-1" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(1, 'الأداء الوظيفي والإنجازات')" id="view-btn-1" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr>
@@ -780,7 +783,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-2">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(2, 'الالتزام بالعمل والانتظام')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-2" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(2, 'الالتزام بالعمل والانتظام')" id="view-btn-2" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr>
@@ -790,7 +793,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-3">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(3, 'العلاقات الإنسانية والتواصل')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-3" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(3, 'العلاقات الإنسانية والتواصل')" id="view-btn-3" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr>
@@ -800,7 +803,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-4">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(4, 'الإبداع والابتكار في العمل')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-4" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(4, 'الإبداع والابتكار في العمل')" id="view-btn-4" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr>
@@ -810,7 +813,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-5">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(5, 'التطوير المهني والتدريب')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-5" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(5, 'التطوير المهني والتدريب')" id="view-btn-5" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr>
@@ -820,7 +823,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-6">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(6, 'إدارة الفريق والقيادة')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-6" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(6, 'إدارة الفريق والقيادة')" id="view-btn-6" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr>
@@ -830,7 +833,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-7">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(7, 'الجودة في تنفيذ المهام')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-7" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(7, 'الجودة في تنفيذ المهام')" id="view-btn-7" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr>
@@ -840,7 +843,7 @@ h2 {
             <td style="text-align: center; width: 250px;">
               <span class="upload-status not-uploaded" id="status-8">غير مرفوع</span><br>
               <button class="upload-btn" onclick="openUploadModal(8, 'السلوك المهني والأخلاقي')" style="margin-top: 5px;">📤 رفع</button>
-              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-8" style="display:none; margin-top: 5px;">👁️ عرض</button>
+              <button class="view-btn" onclick="viewElementFiles(8, 'السلوك المهني والأخلاقي')" id="view-btn-8" style="display:none; margin-top: 5px;">👁️ عرض</button>
             </td>
           </tr>
           <tr style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); font-weight: 700; border-top: 3px solid #667eea;">
@@ -1010,8 +1013,7 @@ function handleUpload(event) {
     closeUploadModal();
     alert(`✅ تم رفع ملف المعلم "${teacherName}" بنجاح!`);
     
-    // إعادة تحميل قائمة الملفات
-    viewTeacherFiles();
+    // لا حاجة لإعادة تحميل قائمة الملفات تلقائياً
   };
   
   reader.readAsDataURL(file);
@@ -1048,7 +1050,108 @@ function updateUploadStatus(elementId, uploaded) {
   }
 }
 
-// عرض ملفات المعلمين (للمدير والصلاحيات)
+// عرض ملفات عنصر تقييم محدد (مجلدات المعلمين في هذا العنصر)
+function viewElementFiles(elementId, elementName) {
+  const filesData = getStoredFiles();
+  const container = document.getElementById('files-container');
+  const section = document.getElementById('teacher-files-section');
+  
+  // جمع جميع المعلمين الذين لديهم ملفات في هذا العنصر
+  const teachersInElement = [];
+  
+  for (const teacherKey in filesData) {
+    const teacher = filesData[teacherKey];
+    if (teacher[elementId] && teacher.teacherName) {
+      teachersInElement.push({
+        key: teacherKey,
+        name: teacher.teacherName,
+        file: teacher[elementId]
+      });
+    }
+  }
+  
+  if (teachersInElement.length === 0) {
+    container.innerHTML = `<p style="text-align: center; color: #718096; padding: 20px;">لا توجد ملفات مرفوعة في عنصر "${elementName}" حالياً</p>`;
+    section.style.display = 'block';
+    
+    // التمرير السلس إلى قسم الملفات
+    setTimeout(function() {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+    return;
+  }
+  
+  let html = `
+    <div style="margin-bottom: 20px; padding: 15px; background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border-radius: 10px; border-right: 4px solid #667eea;">
+      <h3 style="color: #667eea; margin: 0; font-size: 1.3em;">📊 ${elementName}</h3>
+      <p style="color: #718096; margin: 5px 0 0 0; font-size: 0.9em;">عدد المعلمين: ${teachersInElement.length}</p>
+    </div>
+    <div style="display: grid; gap: 20px;">
+  `;
+  
+  // عرض كل معلم كمجلد منفصل
+  teachersInElement.forEach(function(teacherInfo) {
+    const file = teacherInfo.file;
+    const date = new Date(file.uploadDate).toLocaleDateString('ar-SA');
+    const time = new Date(file.uploadDate).toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' });
+    
+    html += `
+      <div style="background: white; padding: 20px; border-radius: 12px; border-right: 5px solid #667eea; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+        <div style="display: flex; align-items: center; margin-bottom: 15px;">
+          <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 50px; height: 50px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5em; margin-left: 15px; flex-shrink: 0;">
+            📁
+          </div>
+          <div style="flex: 1;">
+            <h4 style="color: #2d3748; margin: 0; font-size: 1.3em; font-weight: 600;">${teacherInfo.name}</h4>
+            <p style="color: #718096; margin: 5px 0 0 0; font-size: 0.9em;">مجلد المعلم</p>
+          </div>
+        </div>
+        
+        <div style="background: #f7fafc; padding: 15px; border-radius: 8px; margin-top: 15px;">
+          <div style="margin-bottom: 12px;">
+            <strong style="color: #667eea; display: block; margin-bottom: 5px;">📄 الملف المرفوع:</strong>
+            <span style="color: #2d3748; font-size: 1.05em;">${file.fileName}</span>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 15px 0;">
+            <div style="background: white; padding: 10px; border-radius: 6px;">
+              <div style="color: #718096; font-size: 0.85em; margin-bottom: 3px;">الحجم</div>
+              <div style="color: #2d3748; font-weight: 600;">${(file.fileSize / 1024).toFixed(2)} KB</div>
+            </div>
+            <div style="background: white; padding: 10px; border-radius: 6px;">
+              <div style="color: #718096; font-size: 0.85em; margin-bottom: 3px;">تاريخ الرفع</div>
+              <div style="color: #2d3748; font-weight: 600;">${date}</div>
+            </div>
+            <div style="background: white; padding: 10px; border-radius: 6px;">
+              <div style="color: #718096; font-size: 0.85em; margin-bottom: 3px;">الوقت</div>
+              <div style="color: #2d3748; font-weight: 600;">${time}</div>
+            </div>
+          </div>
+          
+          <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
+            <button onclick="downloadFile('${teacherInfo.key}', ${elementId})" class="btn" style="padding: 10px 20px; font-size: 1em;">
+              ⬇️ تحميل الملف
+            </button>
+            <button onclick="deleteFile('${teacherInfo.key}', ${elementId})" class="btn btn-secondary" style="padding: 10px 20px; font-size: 1em; background: #ef4444; color: white;">
+              🗑️ حذف الملف
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  
+  html += '</div>';
+  container.innerHTML = html;
+  section.style.display = 'block';
+  
+  // التمرير السلس إلى قسم الملفات
+  setTimeout(function() {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+// عرض جميع ملفات المعلمين (للمدير - عرض شامل)
 function viewTeacherFiles() {
   const filesData = getStoredFiles();
   const container = document.getElementById('files-container');
@@ -1142,7 +1245,11 @@ function deleteFile(teacherKey, elementId) {
     
     saveStoredFiles(filesData);
     updateUploadStatus(elementId, false);
-    viewTeacherFiles();
+    
+    // إعادة عرض ملفات العنصر بعد الحذف
+    const elementName = ELEMENT_NAMES[elementId];
+    viewElementFiles(elementId, elementName);
+    
     alert('✓ تم حذف الملف بنجاح');
   }
 }
