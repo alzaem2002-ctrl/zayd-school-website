@@ -27,6 +27,12 @@ read -p "?? VERCEL_TOKEN: " VERCEL_TOKEN
 read -p "?? VERCEL_ORG_ID: " VERCEL_ORG_ID
 read -p "?? VERCEL_PROJECT_ID: " VERCEL_PROJECT_ID
 
+echo ""
+echo "?? ????? ??????? Notion:"
+echo ""
+
+read -p "?? NOTION_TOKEN: " NOTION_TOKEN
+
 if [ -z "$VERCEL_TOKEN" ] || [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ]; then
     echo "? ??? ????? ???? ?????!"
     exit 1
@@ -38,6 +44,13 @@ echo "?? ????? Secrets ??? GitHub..."
 gh secret set VERCEL_TOKEN --body "$VERCEL_TOKEN"
 gh secret set VERCEL_ORG_ID --body "$VERCEL_ORG_ID"
 gh secret set VERCEL_PROJECT_ID --body "$VERCEL_PROJECT_ID"
+
+if [ -n "$NOTION_TOKEN" ]; then
+    gh secret set NOTION_TOKEN --body "$NOTION_TOKEN"
+    echo "? NOTION_TOKEN ?????? ???!"
+else
+    echo "??  NOTION_TOKEN ??? ????? (??????)"
+fi
 
 if [ $? -eq 0 ]; then
     echo ""
