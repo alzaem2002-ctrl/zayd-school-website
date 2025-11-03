@@ -1,29 +1,14 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
-    }
-  ],
+  "buildCommand": "",
+  "outputDirectory": "public",
   "routes": [
     {
-      "src": "/_assets/(.*)",
-      "dest": "/public/_assets/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/public/index.html"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/_assets/(.*)",
-      "destination": "/_assets/$1"
+      "dest": "/$1"
     }
   ]
 }
