@@ -221,6 +221,62 @@ h2 {
   color: #4a5568;
   line-height: 1.6;
 }
+.certificates-section {
+  background: #f7fafc;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px 0;
+  text-align: right;
+}
+.certificate-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px 0;
+  border-right: 5px solid #667eea;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.certificate-card:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+.certificate-card h4 {
+  color: #667eea;
+  margin-bottom: 12px;
+  font-size: 1.3em;
+}
+.certificate-card p {
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 8px 0;
+}
+.certificate-link {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 12px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.certificate-link:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+}
+.certificate-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  margin-right: 10px;
+  font-weight: 600;
+}
 .hidden {
   display: none;
 }
@@ -259,6 +315,7 @@ h2 {
     <a onclick="showSection('home')">الرئيسية</a>
     <a onclick="showSection('about')">عن المدرسة</a>
     <a onclick="showSection('reports')">التقارير</a>
+    <a onclick="showSection('certificates')">شواهد الأداء الوظيفي</a>
     <a onclick="showSection('contact')">اتصل بنا</a>
   </div>
 </nav>
@@ -277,6 +334,10 @@ h2 {
       <div class="section-card" onclick="showSection('reports')">
         <h3>📊 التقارير</h3>
         <p>تقارير وإنجازات</p>
+      </div>
+      <div class="section-card" onclick="showSection('certificates')">
+        <h3>🏆 شواهد الأداء</h3>
+        <p>الشهادات والاعتمادات</p>
       </div>
       <div class="section-card" onclick="showSection('contact')">
         <h3>📞 تواصل معنا</h3>
@@ -341,6 +402,65 @@ h2 {
       </div>
     </div>
     <a onclick="showSection('home')" class="btn">العودة للرئيسية</a>
+  </div>
+
+  <div id="certificates" class="section hidden">
+    <h2>شواهد الأداء الوظيفي</h2>
+    <div class="certificates-section">
+      <div class="certificate-card">
+        <span class="certificate-badge">📜 شهادة اعتماد</span>
+        <h4>شهادة الأداء الوظيفي - مدير المدرسة</h4>
+        <p><strong>الحاصل على الشهادة:</strong> زياد العتيبي</p>
+        <p><strong>المسمى الوظيفي:</strong> مدير مدرسة زيد بن ثابت الابتدائية</p>
+        <p><strong>تاريخ الإصدار:</strong> 2024</p>
+        <p style="margin-top: 15px; color: #667eea;"><strong>الحالة:</strong> نشط</p>
+        <a href="#" class="certificate-link" onclick="alert('سيتم تحميل الشهادة قريباً'); return false;">📥 تحميل الشهادة</a>
+      </div>
+
+      <div class="certificate-card">
+        <span class="certificate-badge">⭐ تقييم الأداء</span>
+        <h4>تقرير تقييم الأداء الوظيفي</h4>
+        <p><strong>الفترة:</strong> 2023-2024</p>
+        <p><strong>المستوى:</strong> متميز</p>
+        <p><strong>التقييم:</strong> أداء وظيفي متميز في إدارة المدرسة وتطوير العملية التعليمية</p>
+        <a href="#" class="certificate-link" onclick="alert('سيتم فتح التقرير قريباً'); return false;">📄 عرض التقرير</a>
+      </div>
+
+      <div class="certificate-card">
+        <span class="certificate-badge">🎓 شهادة تطوير</span>
+        <h4>شهادة البرامج التدريبية والمهنية</h4>
+        <p><strong>البرنامج:</strong> برامج التطوير المهني والإداري</p>
+        <p><strong>المشاركين:</strong> الكادر الإداري والتعليمي</p>
+        <p><strong>النتائج:</strong> تطوير المهارات الإدارية والقيادية</p>
+        <a href="#" class="certificate-link" onclick="alert('سيتم فتح التفاصيل قريباً'); return false;">🔗 تفاصيل البرامج</a>
+      </div>
+
+      <div class="certificate-card">
+        <span class="certificate-badge">🏅 إنجازات</span>
+        <h4>شهادات الإنجازات والتميز</h4>
+        <p><strong>المجالات:</strong> التميز الأكاديمي، الأنشطة المدرسية، التطوير المستمر</p>
+        <p><strong>الجهة المانحة:</strong> وزارة التعليم</p>
+        <p><strong>الفترة:</strong> 2023-2024</p>
+        <a href="#" class="certificate-link" onclick="alert('سيتم عرض جميع الشهادات قريباً'); return false;">📋 عرض جميع الشهادات</a>
+      </div>
+
+      <div class="certificate-card">
+        <span class="certificate-badge">📊 تقييم شامل</span>
+        <h4>تقييم الأداء الشامل للمدرسة</h4>
+        <p><strong>المعايير:</strong> الجودة التعليمية، الإدارة المدرسية، البيئة التعليمية</p>
+        <p><strong>التصنيف:</strong> مدرسة متميزة</p>
+        <p><strong>التاريخ:</strong> 2024</p>
+        <a href="#" class="certificate-link" onclick="alert('سيتم عرض التقييم الكامل قريباً'); return false;">📊 عرض التقييم</a>
+      </div>
+    </div>
+    <div style="margin-top: 30px;">
+      <h3 style="color: #667eea; margin-bottom: 20px;">روابط ذات صلة</h3>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a onclick="showSection('reports')" class="btn btn-secondary">📊 التقارير</a>
+        <a onclick="showSection('about')" class="btn btn-secondary">ℹ️ عن المدرسة</a>
+      </div>
+    </div>
+    <a onclick="showSection('home')" class="btn" style="margin-top: 20px;">العودة للرئيسية</a>
   </div>
 
   <div id="contact" class="section hidden">
