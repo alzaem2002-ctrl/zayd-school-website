@@ -4,8 +4,14 @@
   "description": "???? ????? ??? ?? ???? ??????????",
   "scripts": {
     "build": "echo 'Ready for deployment'",
-    "start": "python -m http.server 3000"
+    "start": "python -m http.server 3000",
+    "serve": "serve public -l 4173",
+    "test": "playwright test"
   },
   "author": "????????? ???????",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "serve": "^14.2.5"
+  }
 }
