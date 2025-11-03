@@ -317,6 +317,55 @@ h2 {
 .certificate-icon:hover .title {
   color: #667eea;
 }
+.evaluation-table {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 40px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+.evaluation-table h3 {
+  color: #667eea;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.5em;
+}
+.evaluation-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+  font-size: 1.05em;
+}
+.evaluation-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  font-weight: 600;
+  border: 1px solid #667eea;
+}
+.evaluation-table td {
+  padding: 12px 15px;
+  border: 1px solid #e2e8f0;
+  color: #2d3748;
+}
+.evaluation-table tr:nth-child(even) {
+  background: #f7fafc;
+}
+.evaluation-table tr:hover {
+  background: #edf2f7;
+  transition: background 0.2s;
+}
+.evaluation-table .element-name {
+  font-weight: 600;
+  color: #2d3748;
+}
+.evaluation-table .weight {
+  text-align: center;
+  font-weight: 700;
+  color: #667eea;
+  font-size: 1.1em;
+}
 .hidden {
   display: none;
 }
@@ -360,6 +409,17 @@ h2 {
   }
   .certificate-icon .title {
     font-size: 0.9em;
+  }
+  .evaluation-table {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  .evaluation-table table {
+    font-size: 0.9em;
+  }
+  .evaluation-table th,
+  .evaluation-table td {
+    padding: 10px 8px;
   }
 }
 </style>
@@ -536,6 +596,66 @@ h2 {
         <a href="#" class="certificate-link" onclick="alert('سيتم عرض التقييم الكامل قريباً'); return false;">📊 عرض التقييم</a>
       </div>
     </div>
+    
+    <div class="evaluation-table">
+      <h3>عناصر التقييم لشواهد الأداء الوظيفي</h3>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 5%;">#</th>
+            <th style="width: 60%;">عنصر التقييم</th>
+            <th style="width: 35%;">الوزن النسبي</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">1</td>
+            <td class="element-name">الأداء الوظيفي والإنجازات</td>
+            <td class="weight">25%</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">2</td>
+            <td class="element-name">الالتزام بالعمل والانتظام</td>
+            <td class="weight">15%</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">3</td>
+            <td class="element-name">العلاقات الإنسانية والتواصل</td>
+            <td class="weight">15%</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">4</td>
+            <td class="element-name">الإبداع والابتكار في العمل</td>
+            <td class="weight">12%</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">5</td>
+            <td class="element-name">التطوير المهني والتدريب</td>
+            <td class="weight">10%</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">6</td>
+            <td class="element-name">إدارة الفريق والقيادة</td>
+            <td class="weight">10%</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">7</td>
+            <td class="element-name">الجودة في تنفيذ المهام</td>
+            <td class="weight">8%</td>
+          </tr>
+          <tr>
+            <td style="text-align: center; font-weight: 600; color: #667eea;">8</td>
+            <td class="element-name">السلوك المهني والأخلاقي</td>
+            <td class="weight">5%</td>
+          </tr>
+          <tr style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); font-weight: 700; border-top: 3px solid #667eea;">
+            <td colspan="2" style="text-align: left; padding-right: 20px; font-size: 1.1em; color: #2d3748;">المجموع</td>
+            <td class="weight" style="font-size: 1.2em; color: #667eea;">100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
     <div style="margin-top: 30px;">
       <h3 style="color: #667eea; margin-bottom: 20px;">روابط ذات صلة</h3>
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
