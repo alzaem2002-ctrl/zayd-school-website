@@ -757,9 +757,9 @@ h2 {
         <thead>
           <tr>
             <th style="width: 5%;">#</th>
-            <th style="width: 45%;">عنصر التقييم</th>
+            <th style="width: 40%;">عنصر التقييم</th>
             <th style="width: 15%;">الوزن النسبي</th>
-            <th style="width: 35%;">روابط</th>
+            <th style="width: 40%;">روابط</th>
           </tr>
         </thead>
         <tbody>
@@ -767,41 +767,81 @@ h2 {
             <td style="text-align: center; font-weight: 600; color: #667eea;">1</td>
             <td class="element-name">الأداء الوظيفي والإنجازات</td>
             <td class="weight">25%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-1">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(1, 'الأداء الوظيفي والإنجازات')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-1" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 600; color: #667eea;">2</td>
             <td class="element-name">الالتزام بالعمل والانتظام</td>
             <td class="weight">15%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-2">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(2, 'الالتزام بالعمل والانتظام')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-2" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 600; color: #667eea;">3</td>
             <td class="element-name">العلاقات الإنسانية والتواصل</td>
             <td class="weight">15%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-3">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(3, 'العلاقات الإنسانية والتواصل')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-3" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 600; color: #667eea;">4</td>
             <td class="element-name">الإبداع والابتكار في العمل</td>
             <td class="weight">12%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-4">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(4, 'الإبداع والابتكار في العمل')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-4" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 600; color: #667eea;">5</td>
             <td class="element-name">التطوير المهني والتدريب</td>
             <td class="weight">10%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-5">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(5, 'التطوير المهني والتدريب')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-5" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 600; color: #667eea;">6</td>
             <td class="element-name">إدارة الفريق والقيادة</td>
             <td class="weight">10%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-6">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(6, 'إدارة الفريق والقيادة')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-6" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 600; color: #667eea;">7</td>
             <td class="element-name">الجودة في تنفيذ المهام</td>
             <td class="weight">8%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-7">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(7, 'الجودة في تنفيذ المهام')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-7" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr>
             <td style="text-align: center; font-weight: 600; color: #667eea;">8</td>
             <td class="element-name">السلوك المهني والأخلاقي</td>
             <td class="weight">5%</td>
+            <td style="text-align: center; width: 250px;">
+              <span class="upload-status not-uploaded" id="status-8">غير مرفوع</span><br>
+              <button class="upload-btn" onclick="openUploadModal(8, 'السلوك المهني والأخلاقي')" style="margin-top: 5px;">📤 رفع</button>
+              <button class="view-btn" onclick="viewTeacherFiles()" id="view-btn-8" style="display:none; margin-top: 5px;">👁️ عرض</button>
+            </td>
           </tr>
           <tr style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); font-weight: 700; border-top: 3px solid #667eea;">
             <td colspan="2" style="text-align: left; padding-right: 20px; font-size: 1.1em; color: #2d3748;">المجموع</td>
@@ -863,6 +903,270 @@ h2 {
     <p style="margin-top: 15px; font-size: 0.9em;">مدير المدرسة: زياد العتيبي | الإعداد: عبدالعزيز الخلفان</p>
   </div>
 </div>
+
+<!-- Modal رفع الملفات -->
+<div class="upload-modal" id="uploadModal">
+  <div class="upload-modal-content" style="position: relative;">
+    <button class="close-modal" onclick="closeUploadModal()">×</button>
+    <h3 id="modalTitle">رفع شاهد الأداء</h3>
+    <form id="uploadForm" onsubmit="handleUpload(event)">
+      <input type="hidden" id="elementId" name="elementId">
+      <input type="text" id="teacherName" name="teacherName" placeholder="اسم المعلم (مطلوب)" required>
+      <select id="userRole" name="userRole" required>
+        <option value="">اختر الدور</option>
+        <option value="teacher">معلم</option>
+        <option value="manager">مدير</option>
+        <option value="admin">إداري</option>
+      </select>
+      <input type="file" id="certificateFile" name="certificateFile" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+      <div class="upload-actions">
+        <button type="button" class="btn btn-secondary" onclick="closeUploadModal()">إلغاء</button>
+        <button type="submit" class="btn">📤 رفع الملف</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+let currentElementId = null;
+const ELEMENT_NAMES = {
+  1: 'الأداء الوظيفي والإنجازات',
+  2: 'الالتزام بالعمل والانتظام',
+  3: 'العلاقات الإنسانية والتواصل',
+  4: 'الإبداع والابتكار في العمل',
+  5: 'التطوير المهني والتدريب',
+  6: 'إدارة الفريق والقيادة',
+  7: 'الجودة في تنفيذ المهام',
+  8: 'السلوك المهني والأخلاقي'
+};
+
+// فتح نافذة رفع الملف
+function openUploadModal(elementId, elementName) {
+  currentElementId = elementId;
+  document.getElementById('elementId').value = elementId;
+  document.getElementById('modalTitle').textContent = `رفع شاهد: ${elementName}`;
+  document.getElementById('uploadModal').classList.add('active');
+  document.getElementById('teacherName').focus();
+}
+
+// إغلاق نافذة رفع الملف
+function closeUploadModal() {
+  document.getElementById('uploadModal').classList.remove('active');
+  document.getElementById('uploadForm').reset();
+  currentElementId = null;
+}
+
+// معالجة رفع الملف
+function handleUpload(event) {
+  event.preventDefault();
+  
+  const elementId = parseInt(document.getElementById('elementId').value);
+  const teacherName = document.getElementById('teacherName').value.trim();
+  const userRole = document.getElementById('userRole').value;
+  const fileInput = document.getElementById('certificateFile');
+  const file = fileInput.files[0];
+  
+  if (!file || !teacherName) {
+    alert('يرجى إدخال اسم المعلم واختيار الملف');
+    return;
+  }
+  
+  // التحقق من عدم تكرار اسم المعلم في نفس العنصر
+  const existingData = getStoredFiles();
+  const teacherKey = teacherName.toLowerCase();
+  
+  if (existingData[teacherKey] && existingData[teacherKey][elementId]) {
+    if (!confirm(`يوجد ملف مرفوع بالفعل للمعلم "${teacherName}" في هذا العنصر. هل تريد استبداله؟`)) {
+      return;
+    }
+  }
+  
+  // قراءة الملف كـ Base64
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const fileData = {
+      fileName: file.name,
+      fileSize: file.size,
+      fileType: file.type,
+      fileContent: e.target.result,
+      uploadDate: new Date().toISOString(),
+      elementId: elementId,
+      elementName: ELEMENT_NAMES[elementId],
+      uploadedBy: userRole
+    };
+    
+    // حفظ البيانات
+    if (!existingData[teacherKey]) {
+      existingData[teacherKey] = {};
+    }
+    existingData[teacherKey][elementId] = fileData;
+    existingData[teacherKey].teacherName = teacherName;
+    existingData[teacherKey].totalFiles = Object.keys(existingData[teacherKey]).filter(k => !isNaN(k)).length;
+    
+    saveStoredFiles(existingData);
+    
+    // تحديث الواجهة
+    updateUploadStatus(elementId, true);
+    closeUploadModal();
+    alert(`✅ تم رفع ملف المعلم "${teacherName}" بنجاح!`);
+    
+    // إعادة تحميل قائمة الملفات
+    viewTeacherFiles();
+  };
+  
+  reader.readAsDataURL(file);
+}
+
+// الحصول على الملفات المخزنة
+function getStoredFiles() {
+  try {
+    const stored = localStorage.getItem('teacherCertificates');
+    return stored ? JSON.parse(stored) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+// حفظ الملفات
+function saveStoredFiles(data) {
+  localStorage.setItem('teacherCertificates', JSON.stringify(data));
+}
+
+// تحديث حالة الرفع
+function updateUploadStatus(elementId, uploaded) {
+  const statusEl = document.getElementById(`status-${elementId}`);
+  const viewBtn = document.getElementById(`view-btn-${elementId}`);
+  
+  if (uploaded) {
+    statusEl.textContent = '✓ مرفوع';
+    statusEl.className = 'upload-status uploaded';
+    viewBtn.style.display = 'inline-block';
+  } else {
+    statusEl.textContent = 'غير مرفوع';
+    statusEl.className = 'upload-status not-uploaded';
+    viewBtn.style.display = 'none';
+  }
+}
+
+// عرض ملفات المعلمين (للمدير والصلاحيات)
+function viewTeacherFiles() {
+  const filesData = getStoredFiles();
+  const container = document.getElementById('files-container');
+  const section = document.getElementById('teacher-files-section');
+  
+  if (Object.keys(filesData).length === 0) {
+    container.innerHTML = '<p style="text-align: center; color: #718096; padding: 20px;">لا توجد ملفات مرفوعة حالياً</p>';
+    section.style.display = 'block';
+    return;
+  }
+  
+  let html = '<div style="display: grid; gap: 15px;">';
+  
+  for (const teacherKey in filesData) {
+    const teacher = filesData[teacherKey];
+    if (!teacher.teacherName) continue;
+    
+    html += `
+      <div style="background: white; padding: 20px; border-radius: 10px; border-right: 4px solid #667eea;">
+        <h4 style="color: #667eea; margin-bottom: 15px; font-size: 1.2em;">📁 ${teacher.teacherName}</h4>
+        <div style="margin-right: 20px;">
+    `;
+    
+    for (let i = 1; i <= 8; i++) {
+      if (teacher[i]) {
+        const file = teacher[i];
+        const date = new Date(file.uploadDate).toLocaleDateString('ar-SA');
+        html += `
+          <div style="margin: 10px 0; padding: 10px; background: #f7fafc; border-radius: 5px;">
+            <strong>${file.elementName}</strong><br>
+            <span style="color: #718096; font-size: 0.9em;">
+              📄 ${file.fileName} | 
+              💾 ${(file.fileSize / 1024).toFixed(2)} KB | 
+              📅 ${date}
+            </span><br>
+            <button onclick="downloadFile('${teacherKey}', ${i})" class="btn" style="margin-top: 8px; padding: 6px 15px; font-size: 0.9em;">
+              ⬇️ تحميل
+            </button>
+            <button onclick="deleteFile('${teacherKey}', ${i})" class="btn btn-secondary" style="margin-top: 8px; padding: 6px 15px; font-size: 0.9em; background: #ef4444; color: white;">
+              🗑️ حذف
+            </button>
+          </div>
+        `;
+        updateUploadStatus(i, true);
+      }
+    }
+    
+    html += `
+        </div>
+      </div>
+    `;
+  }
+  
+  html += '</div>';
+  container.innerHTML = html;
+  section.style.display = 'block';
+}
+
+// تحميل الملف
+function downloadFile(teacherKey, elementId) {
+  const filesData = getStoredFiles();
+  const file = filesData[teacherKey] && filesData[teacherKey][elementId];
+  
+  if (!file) {
+    alert('الملف غير موجود');
+    return;
+  }
+  
+  const link = document.createElement('a');
+  link.href = file.fileContent;
+  link.download = `${filesData[teacherKey].teacherName}_${file.elementName}_${file.fileName}`;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// حذف الملف
+function deleteFile(teacherKey, elementId) {
+  if (!confirm('هل أنت متأكد من حذف هذا الملف؟')) {
+    return;
+  }
+  
+  const filesData = getStoredFiles();
+  if (filesData[teacherKey] && filesData[teacherKey][elementId]) {
+    delete filesData[teacherKey][elementId];
+    filesData[teacherKey].totalFiles = Object.keys(filesData[teacherKey]).filter(k => !isNaN(k)).length;
+    
+    if (filesData[teacherKey].totalFiles === 0) {
+      delete filesData[teacherKey];
+    }
+    
+    saveStoredFiles(filesData);
+    updateUploadStatus(elementId, false);
+    viewTeacherFiles();
+    alert('✓ تم حذف الملف بنجاح');
+  }
+}
+
+// تحديث الحالة عند التحميل
+window.addEventListener('load', function() {
+  const filesData = getStoredFiles();
+  for (const teacherKey in filesData) {
+    const teacher = filesData[teacherKey];
+    for (let i = 1; i <= 8; i++) {
+      if (teacher[i]) {
+        updateUploadStatus(i, true);
+      }
+    }
+  }
+});
+
+// إغلاق النافذة عند النقر خارجها
+document.getElementById('uploadModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeUploadModal();
+  }
+});
+</script>
 
 <script>
 function showSection(sectionId) {
