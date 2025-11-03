@@ -16,17 +16,42 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
+}
+.navbar {
+  background: rgba(255,255,255,0.95);
+  padding: 15px 30px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+.nav-links a:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
 }
 .container {
   background: white;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  max-width: 800px;
+  max-width: 1000px;
   width: 100%;
+  margin: 0 auto;
   padding: 50px;
   text-align: center;
 }
@@ -80,6 +105,87 @@ h1 {
   background: linear-gradient(90deg, transparent, #667eea, transparent);
   margin: 30px 0;
 }
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+.section-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.section-card:hover {
+  transform: translateY(-5px);
+}
+.section-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+.section-card p {
+  margin: 10px 0;
+  opacity: 0.9;
+}
+.btn {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 10px;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+.btn:hover {
+  background: #764ba2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+.btn-secondary {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+.btn-secondary:hover {
+  background: #667eea;
+  color: white;
+}
+.contact-section {
+  background: #f7fafc;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 30px;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.social-link {
+  display: inline-block;
+  background: #667eea;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  transition: all 0.3s;
+}
+.social-link:hover {
+  background: #764ba2;
+  transform: scale(1.1);
+}
 .footer {
   margin-top: 40px;
   padding-top: 30px;
@@ -99,16 +205,33 @@ h1 {
     height: 100px;
     font-size: 40px;
   }
+  .nav-links {
+    gap: 15px;
+  }
+  .nav-links a {
+    font-size: 0.9em;
+    padding: 8px 15px;
+  }
 }
 </style>
 </head>
 <body>
-<div class="container">
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="#home">الرئيسية</a>
+    <a href="#about">عن المدرسة</a>
+    <a href="#contact">اتصل بنا</a>
+    <a href="#info">معلومات</a>
+  </div>
+</nav>
+
+<div class="container" id="home">
   <div class="logo">ز</div>
   <h1>مدرسة زيد بن ثابت الابتدائية</h1>
   <p class="subtitle">مرحباً بكم في موقعنا الإلكتروني</p>
   
-  <div class="info-card">
+  <div class="info-card" id="about">
+    <h2 style="color: #667eea; margin-bottom: 20px; text-align: center;">معلومات المدرسة</h2>
     <div class="info-item">
       <span class="info-label">اسم المدرسة:</span>
       <span class="info-value">مدرسة زيد بن ثابت الابتدائية</span>
@@ -124,11 +247,61 @@ h1 {
       <span class="info-value">عبدالعزيز الخلفان</span>
     </div>
   </div>
-  
-  <div class="footer">
-    <p>© 2024 مدرسة زيد بن ثابت الابتدائية</p>
+
+  <div class="sections">
+    <div class="section-card">
+      <h3>📚 التعليم</h3>
+      <p>نقدم تعليمًا متميزًا لأبنائنا الطلاب</p>
+    </div>
+    <div class="section-card">
+      <h3>🎓 التميز</h3>
+      <p>نسعى لتحقيق التميز في جميع المجالات</p>
+    </div>
+    <div class="section-card">
+      <h3>🌟 الإبداع</h3>
+      <p>نشجع الإبداع والابتكار لدى الطلاب</p>
+    </div>
+  </div>
+
+  <div style="margin: 30px 0;">
+    <a href="#contact" class="btn">اتصل بنا</a>
+    <a href="#info" class="btn btn-secondary">المزيد من المعلومات</a>
+  </div>
+
+  <div class="contact-section" id="contact">
+    <h2 style="color: #667eea; margin-bottom: 20px;">تواصل معنا</h2>
+    <p style="margin: 15px 0; color: #4a5568;">
+      <strong>البريد الإلكتروني:</strong> info@zayd-school.edu
+    </p>
+    <p style="margin: 15px 0; color: #4a5568;">
+      <strong>الهاتف:</strong> +966 XX XXX XXXX
+    </p>
+    <div class="social-links">
+      <a href="#" class="social-link" title="Twitter">📱</a>
+      <a href="#" class="social-link" title="Facebook">📘</a>
+      <a href="#" class="social-link" title="WhatsApp">💬</a>
+      <a href="#" class="social-link" title="Email">📧</a>
+    </div>
+  </div>
+
+  <div class="footer" id="info">
+    <p><strong>© 2024 مدرسة زيد بن ثابت الابتدائية</strong></p>
     <p>جميع الحقوق محفوظة</p>
+    <p style="margin-top: 15px; font-size: 0.9em;">مدير المدرسة: زياد العتيبي | الإعداد: عبدالعزيز الخلفان</p>
   </div>
 </div>
+
+<script>
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
 </body>
 </html>
