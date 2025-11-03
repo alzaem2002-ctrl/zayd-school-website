@@ -8,8 +8,22 @@
   ],
   "routes": [
     {
+      "src": "/_assets/(.*)",
+      "dest": "/public/_assets/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/public/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/public/index.html"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/_assets/(.*)",
+      "destination": "/_assets/$1"
     }
   ]
 }
