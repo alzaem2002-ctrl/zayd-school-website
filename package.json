@@ -6,12 +6,17 @@
     "build": "echo 'Ready for deployment'",
     "start": "python -m http.server 3000",
     "serve": "serve public -l 4173",
-    "test": "playwright test"
+    "test": "playwright test",
+    "vercel": "vercel",
+    "vercel:deploy": "vercel --prod",
+    "vercel:login": "vercel login",
+    "vercel:projects": "vercel project ls"
   },
   "author": "????????? ???????",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.56.1",
-    "serve": "^14.2.5"
+    "serve": "^14.2.5",
+    "vercel": "49.1.1"
   }
 }
